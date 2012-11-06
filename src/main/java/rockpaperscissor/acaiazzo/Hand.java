@@ -10,7 +10,9 @@ public class Hand {
     public enum Moves  {
         ROCK,
         PAPER,
-        SCISSOR
+        SCISSOR,
+        LIZARD,
+        SPOCK
     }
 
     private Moves currentMove;
