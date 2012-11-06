@@ -20,7 +20,14 @@ public class Judge implements Comparator<Player> {
 
         if (move1.equals(ROCK) && move2.equals(SCISSOR) ||
             move1.equals(PAPER) && move2.equals(ROCK) ||
-            move1.equals(SCISSOR) && move2.equals(PAPER)) {
+            move1.equals(SCISSOR) && move2.equals(PAPER) ||
+            move1.equals(LIZARD) && move2.equals(PAPER)||
+            move1.equals(LIZARD) && move2.equals(SPOCK)||
+            move1.equals(PAPER) && move2.equals(SPOCK) ||
+            move1.equals(SPOCK) && move2.equals(SCISSOR) ||
+            move1.equals(SPOCK) && move2.equals(ROCK) ||
+            move1.equals(SCISSOR) && move2.equals(LIZARD) ||
+            move1.equals(ROCK) && move2.equals(LIZARD)) {
             return 1;
         } else {
             return -1;
