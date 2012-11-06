@@ -1,3 +1,5 @@
+package rockpaperscissor.acaiazzo;
+
 import javax.print.attribute.standard.PagesPerMinute;
 
 /**

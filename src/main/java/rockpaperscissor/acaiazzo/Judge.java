@@ -1,6 +1,8 @@
+package rockpaperscissor.acaiazzo;
+
 import java.util.Comparator;
 
-import static Hand.Moves.*;
+import static rockpaperscissor.acaiazzo.Hand.Moves.*;
 
 /**
  * User: antoniocaiazzo

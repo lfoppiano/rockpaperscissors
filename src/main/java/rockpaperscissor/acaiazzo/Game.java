@@ -1,3 +1,5 @@
+package rockpaperscissor.acaiazzo;
+
 /**
  * User: antoniocaiazzo
  */
@@ -8,7 +10,7 @@ public class Game {
     private Judge judge;
 
 
-    public void match(Player player1, Player player2) {
+    public void match() {
 
         int result = judge.compare(player1, player2);
 
