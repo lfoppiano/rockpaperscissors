@@ -1,7 +1,8 @@
 package org.games.engine;
 
+import org.games.engine.exception.NoRuleFoundException;
+import org.games.engine.rules.RuleDispatcher;
 import org.games.weapon.Weapon;
-import org.games.engine.rules.RuleSelector;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,10 +14,10 @@ import org.games.engine.rules.RuleSelector;
 public class Engine {
     Player player1;
     Player player2;
-    private RuleSelector ruleSelector;
+    private RuleDispatcher ruleDispatcher;
 
-    public Engine(RuleSelector ruleSelector, Player player1, Player player2) {
-        this.ruleSelector = ruleSelector;
+    public Engine(RuleDispatcher ruleDispatcher, Player player1, Player player2) {
+        this.ruleDispatcher = ruleDispatcher;
         this.player1 = player1;
         this.player2 = player2;
     }
@@ -24,7 +25,12 @@ public class Engine {
     public void play() throws InstantiationException, IllegalAccessException {
         Weapon w1 = player1.chooseWeapon();
         Weapon w2 = player2.chooseWeapon();
-        Weapon winner = ruleSelector.selectRule(w1, w2).getResult(w1, w2);
+        Weapon winner = null;
+        try {
+            winner = ruleDispatcher.invokeRule(w1, w2);
+        } catch (NoRuleFoundException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
 
         System.out.println(w1 + " vs "+ w2 + ": winner is "+ winner);
     }
