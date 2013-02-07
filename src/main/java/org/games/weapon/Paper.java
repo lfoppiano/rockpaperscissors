@@ -1,4 +1,4 @@
-package org.games.component;
+package org.games.weapon;
 
 /**
  * Created with IntelliJ IDEA.
@@ -7,8 +7,8 @@ package org.games.component;
  * Time: 20:24
  * To change this template use File | Settings | File Templates.
  */
-public class Scissors implements Weapon{
+public class Paper implements Weapon{
     public String toString() {
-        return "Scissors";
+        return "Paper";
     }
 }

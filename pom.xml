@@ -5,74 +5,50 @@
     <artifactId>rockScissorsPaper</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-          
+
     <organization>
-    	<name>Byte-Code</name>
-	    <url>http://www.byte-code.com</url>
+        <name>Byte-Code</name>
+        <url>http://www.byte-code.com</url>
     </organization>
 
-    
-  <properties>
-  
-  </properties>
-    
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+            <version>3.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.9</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+    <build>
 
 
-  <repositories>
-    <repository>
-     <id>repo01.maven.org</id>
-     <name>Maven Central Repository</name>
-     <url>http://repo1.maven.org/maven2</url>
-    </repository>
-    <repository>
-     <id>maven.jboss.org</id>
-     <name>JBoss Maven Repository</name>
-     <url>http://repository.jboss.org/maven2</url>
-    </repository>
-  </repositories>
+        <plugins>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.7</version>
-    </dependency>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
 
-      <dependency>
-        <groupId>org.easymock</groupId>
-        <artifactId>easymock</artifactId>
-        <version>3.1</version>
-      </dependency>
-
-      <dependency>
-          <groupId>org.easymock</groupId>
-          <artifactId>easymockclassextension</artifactId>
-          <version>3.1</version>
-      </dependency>
-
-    <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>1.2.9</version>
-        <scope>provided</scope>
-    </dependency>
-
-  </dependencies>
-  <build>
-
-
-  <plugins>
-
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-compiler-plugin</artifactId>
-      <configuration>
-        <source>1.6</source>
-        <target>1.6</target>
-      </configuration>
-    </plugin>
-
-  </plugins>
-  </build>
+        </plugins>
+    </build>
 
 </project>

@@ -1,6 +1,6 @@
 package org.games.engine.rules;
 
-import org.games.component.Weapon;
+import org.games.weapon.Weapon;
 
 import java.util.List;
 
@@ -14,12 +14,11 @@ import java.util.List;
 public class RuleSelector {
     private List<Rule> rules;
 
-
-    public RuleSelector() {
-
-    }
-
     public Rule selectRule(Weapon w1, Weapon w2) throws IllegalAccessException, InstantiationException {
+        if(rules == null) {
+            throw new IllegalStateException("No rules available, cannot select anything.");
+        }
+
         Rule foundRule = null;
         for(Rule r : rules) {
 
@@ -32,9 +31,7 @@ public class RuleSelector {
                 } catch(NoSuchMethodException e1) {
                     System.out.println("No method found, attemp 2 with " + w2.getClass()+" "+w1.getClass());
                 }
-
             }
-
         }
         return foundRule;
     }

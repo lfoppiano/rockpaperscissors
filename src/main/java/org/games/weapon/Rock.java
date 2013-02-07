@@ -1,4 +1,4 @@
-package org.games.component;
+package org.games.weapon;
 
 /**
  * Created with IntelliJ IDEA.

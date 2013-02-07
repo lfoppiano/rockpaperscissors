@@ -1,8 +1,8 @@
 package org.games.engine.rules;
 
-import org.games.component.Rock;
-import org.games.component.Scissors;
-import org.games.component.Weapon;
+import org.games.weapon.Rock;
+import org.games.weapon.Scissors;
+import org.games.weapon.Weapon;
 
 /**
  * Created with IntelliJ IDEA.

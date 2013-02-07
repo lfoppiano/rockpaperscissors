@@ -1,6 +1,6 @@
 package org.games.engine.rules;
 
-import org.games.component.Weapon;
+import org.games.weapon.Weapon;
 
 /**
  * Created with IntelliJ IDEA.

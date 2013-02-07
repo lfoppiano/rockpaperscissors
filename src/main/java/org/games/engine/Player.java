@@ -1,6 +1,6 @@
-package org.games.actor;
+package org.games.engine;
 
-import org.games.component.Weapon;
+import org.games.weapon.Weapon;
 
 import java.util.List;
 
@@ -19,9 +19,13 @@ public class Player {
     }
 
     public Weapon chooseWeapon() {
+        if(weapons.size() == 0) {
+            throw new IllegalStateException("No weapons from where to choose");
+        }
         int result = (int) Math.random() * weapons.size();
 
         return weapons.get(result);
+
     }
 
 }

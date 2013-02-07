@@ -1,7 +1,6 @@
 package org.games.engine;
 
-import org.games.actor.Player;
-import org.games.component.Weapon;
+import org.games.weapon.Weapon;
 import org.games.engine.rules.RuleSelector;
 
 /**
