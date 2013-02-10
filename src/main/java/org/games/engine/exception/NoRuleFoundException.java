@@ -8,6 +8,11 @@ package org.games.engine.exception;
  * To change this template use File | Settings | File Templates.
  */
 public class NoRuleFoundException extends Exception {
+
+    public NoRuleFoundException() {
+        super();
+    }
+
     public NoRuleFoundException(String s) {
         super(s);
     }

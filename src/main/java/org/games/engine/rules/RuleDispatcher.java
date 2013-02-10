@@ -22,6 +22,10 @@ public class RuleDispatcher {
 
         Rule foundRule = null;
 
+        if(w1.equals(w2)) {
+
+        }
+
         for(Rule r : rules) {
             try {
                 foundRule = (Rule) r.getClass().getDeclaredMethod("getResult", w1.getClass(), w2.getClass()).getDeclaringClass().newInstance();

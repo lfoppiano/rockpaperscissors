@@ -22,7 +22,7 @@ public class Player {
         if(weapons.size() == 0) {
             throw new IllegalStateException("No weapons from where to choose");
         }
-        int result = (int) Math.random() * weapons.size();
+        int result = (int)( Math.random() * weapons.size());
 
         return weapons.get(result);
 

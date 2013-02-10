@@ -1,4 +1,4 @@
-package org.games.actor;
+package org.games.engine;
 
 import org.games.engine.Player;
 import org.games.weapon.Rock;
