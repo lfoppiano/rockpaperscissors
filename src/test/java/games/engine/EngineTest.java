@@ -1,19 +1,11 @@
 package org.games.engine;
 
 import org.games.engine.exception.NoRuleFoundException;
-import org.games.engine.rules.PaperScissors;
-import org.games.engine.rules.RockScissors;
-import org.games.engine.rules.Rule;
-import org.games.engine.rules.RuleDispatcher;
+import org.games.engine.rules.handlers.RuleDispatcher;
 import org.games.weapon.Paper;
 import org.games.weapon.Rock;
-import org.games.weapon.Scissors;
-import org.games.weapon.Weapon;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.easymock.EasyMock.*;
 

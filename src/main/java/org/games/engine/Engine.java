@@ -2,10 +2,8 @@ package org.games.engine;
 
 import org.games.engine.exception.NoRuleFoundException;
 import org.games.engine.rules.*;
-import org.games.weapon.Paper;
-import org.games.weapon.Rock;
-import org.games.weapon.Scissors;
-import org.games.weapon.Weapon;
+import org.games.engine.rules.handlers.RuleDispatcher;
+import org.games.weapon.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +32,8 @@ public class Engine {
         weaponList.add(new Paper());
         weaponList.add(new Rock());
         weaponList.add(new Scissors());
+        weaponList.add(new Lizard());
+        weaponList.add(new Spock());
 
         Player player1 = new Player(weaponList);
         Player player2 = new Player(weaponList);
@@ -42,8 +42,15 @@ public class Engine {
 
         List<Rule> rules = new ArrayList<Rule>();
         rules.add(new RockScissors());
-        rules.add(new RockPaper());
-        rules.add(new PaperScissors());
+        rules.add(new RockLizard());
+        rules.add(new PaperRock());
+        rules.add(new PaperSpock());
+        rules.add(new ScissorsPaper());
+        rules.add(new ScissorsLizard());
+        rules.add(new LizardPaper());
+        rules.add(new LizardSpock());
+        rules.add(new SpockRock());
+        rules.add(new SpockScissors());
 
         ruleDispatcher.setRules(rules);
 

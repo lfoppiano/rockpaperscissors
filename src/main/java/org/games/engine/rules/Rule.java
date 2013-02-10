@@ -9,6 +9,8 @@ import org.games.weapon.Weapon;
  * Time: 08:23
  * To change this template use File | Settings | File Templates.
  */
-public interface Rule<T, E> {
-    Weapon getResult(T weapon1, E weapon2);
+public abstract class Rule<T extends Weapon, E extends Weapon> {
+    public Weapon getResult(T weapon1, E weapon2){
+        return weapon1;
+    }
 }

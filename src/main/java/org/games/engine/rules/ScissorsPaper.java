@@ -1,5 +1,6 @@
 package org.games.engine.rules;
 
+import org.games.engine.annotation.ActiveRule;
 import org.games.weapon.Paper;
 import org.games.weapon.Scissors;
 import org.games.weapon.Weapon;
@@ -11,9 +12,9 @@ import org.games.weapon.Weapon;
  * Time: 00:44
  * To change this template use File | Settings | File Templates.
  */
-public class PaperScissors implements Rule<Paper, Scissors> {
-    @Override
-    public Weapon getResult(Paper weapon1, Scissors weapon2) {
-        return weapon2;
+@ActiveRule
+public class ScissorsPaper extends Rule<Scissors, Paper> {
+    public Weapon getResult(Scissors weapon1, Paper weapon2) {
+        return weapon1;
     }
 }

@@ -1,5 +1,6 @@
 package org.games.engine.rules;
 
+import org.games.engine.annotation.ActiveRule;
 import org.games.weapon.Paper;
 import org.games.weapon.Rock;
 import org.games.weapon.Weapon;
@@ -11,10 +12,10 @@ import org.games.weapon.Weapon;
  * Time: 07:46
  * To change this template use File | Settings | File Templates.
  */
-public class RockPaper implements Rule<Rock, Paper>{
-
+@ActiveRule
+public class PaperRock extends Rule<Paper, Rock>{
     @Override
-    public Weapon getResult(Rock weapon1, Paper weapon2) {
-        return weapon2;
+    public Weapon getResult(Paper weapon1, Rock weapon2) {
+        return weapon1;
     }
 }

@@ -1,6 +1,7 @@
 package org.games.engine.rules;
 
 import org.games.engine.exception.NoRuleFoundException;
+import org.games.engine.rules.handlers.RuleDispatcher;
 import org.games.weapon.Paper;
 import org.games.weapon.Rock;
 import org.games.weapon.Scissors;
@@ -54,13 +55,13 @@ public class RuleDispatcherTest {
         Weapon w2 = new Paper();
 
         List<Rule> rules = new ArrayList<Rule>();
-        rules.add(new PaperScissors());
-        rules.add(new RockPaper());
+        rules.add(new ScissorsPaper());
+        rules.add(new PaperRock());
         rules.add(new RockScissors());
 
         target.setRules(rules);
 
-        Weapon result = target.invokeRule(w2, w1);
+        Weapon result = target.invokeRule(w1, w2);
         assertThat(result, is(w1));
 
         result = target.invokeRule(w1, w2);
@@ -73,7 +74,7 @@ public class RuleDispatcherTest {
         Weapon w2 = new Rock();
 
         List<Rule> rules = new ArrayList<Rule>();
-        rules.add(new PaperScissors());
+        rules.add(new ScissorsPaper());
 
         target.setRules(rules);
 

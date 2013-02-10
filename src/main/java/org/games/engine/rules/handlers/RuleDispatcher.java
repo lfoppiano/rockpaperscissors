@@ -1,6 +1,7 @@
-package org.games.engine.rules;
+package org.games.engine.rules.handlers;
 
 import org.games.engine.exception.NoRuleFoundException;
+import org.games.engine.rules.Rule;
 import org.games.weapon.Weapon;
 
 import java.util.List;
@@ -16,26 +17,26 @@ public class RuleDispatcher {
     private List<Rule> rules;
 
     public Weapon invokeRule(Weapon w1, Weapon w2) throws IllegalAccessException, InstantiationException, NoRuleFoundException {
-        if(rules == null || rules.size() == 0) {
+        if (rules == null || rules.size() == 0) {
             throw new IllegalStateException("No rules available, cannot select anything.");
         }
 
         Rule foundRule = null;
 
-        if(w1.equals(w2)) {
+        if (w1.equals(w2)) {
 
         }
 
-        for(Rule r : rules) {
+        for (Rule r : rules) {
             try {
-                foundRule = (Rule) r.getClass().getDeclaredMethod("getResult", w1.getClass(), w2.getClass()).getDeclaringClass().newInstance();
+                foundRule = (Rule) r.getClass().getMethod("getResult", w1.getClass(), w2.getClass()).getDeclaringClass().newInstance();
                 return foundRule.getResult(w1, w2);
             } catch (NoSuchMethodException e) {
                 //System.out.println("No method found, class "+ r.getClass() +" attempt 1 with " + w1.getClass()+" "+w2.getClass());
                 try {
-                    foundRule = (Rule) r.getClass().getDeclaredMethod("getResult", w2.getClass(), w1.getClass()).getDeclaringClass().newInstance();
+                    foundRule = (Rule) r.getClass().getMethod("getResult", w2.getClass(), w1.getClass()).getDeclaringClass().newInstance();
                     return foundRule.getResult(w2, w1);
-                } catch(NoSuchMethodException e1) {
+                } catch (NoSuchMethodException e1) {
                     //System.out.println("No method found, class "+ r.getClass() +" attempt 2 with " + w2.getClass()+" "+w1.getClass());
                 }
             }
